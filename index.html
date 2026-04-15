@@ -1,59 +1,233 @@
-
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Physical AI Energy Systems Lab</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Child Psychology Platform | Digital Convergence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Noto+Sans+SC:wght@300;400;700&family=Noto+Sans+KR:wght@300;400;700&display=swap');
+        :root { --accent: #00f2ff; --bg: #050505; }
+        body { background-color: var(--bg); color: #e0e0e0; overflow-x: hidden; }
+        .font-zh { font-family: 'Noto Sans SC', sans-serif; }
+        .font-en { font-family: 'Orbitron', sans-serif; }
+        .font-ko { font-family: 'Noto Sans KR', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; }
+        .glass:hover { border-color: var(--accent); box-shadow: 0 0 20px rgba(0, 242, 255, 0.2); }
+        .hero-gradient { background: radial-gradient(circle at center, rgba(0, 242, 255, 0.15) 0%, transparent 70%); }
+        /* Language display control */
+        .lang-en, .lang-ko { display: none; }
+        .paper-content { max-height: 300px; overflow-y: auto; padding-right: 10px; }
+        .paper-content::-webkit-scrollbar { width: 4px; }
+        .paper-content::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+        /* Search Input Styling */
+        .search-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 15px rgba(0, 242, 255, 0.3); }
+    </style>
 </head>
+<body class="font-zh" id="body-font">
 
-<body>
+    <div class="fixed inset-0 pointer-events-none hero-gradient"></div>
 
-<header>
-<h1>Physical AI Energy Systems Lab</h1>
-<p>물리적 인공지능 기반 재생에너지 시스템 연구</p>
-</header>
+    <nav class="fixed w-full z-50 glass py-4 px-8 flex justify-between items-center">
+        <div class="font-en font-bold text-xl tracking-widest text-white">DIGITAL CONVERGENCE LAB</div>
+        <div class="flex space-x-2 bg-black/50 p-1 rounded-lg border border-white/10">
+            <button onclick="setLang('zh')" class="px-3 py-1 rounded text-sm text-cyan-400 font-bold hover:bg-white/10 transition">中文</button>
+            <button onclick="setLang('en')" class="px-3 py-1 rounded text-sm text-gray-400 hover:text-cyan-400 hover:bg-white/10 transition">EN</button>
+            <button onclick="setLang('ko')" class="px-3 py-1 rounded text-sm text-gray-400 hover:text-cyan-400 hover:bg-white/10 transition">한국어</button>
+        </div>
+    </nav>
 
-<nav>
-<a href="#research">Research</a>
-<a href="publications/papers.html">Publications</a>
-<a href="people/team.html">People</a>
-<a href="saemangeum/project.html">Saemangeum</a>
-<a href="#contact">Contact</a>
-</nav>
+    <header class="relative pt-32 pb-16 flex flex-col justify-center items-center text-center px-4">
+        <div class="z-10 animate__animated animate__zoomIn">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">
+                <span class="lang-zh">AI 学龄前儿童<span class="text-cyan-400">心理分析平台</span></span>
+                <span class="lang-en font-en">AI Preschooler <span class="text-cyan-400">Psychology Platform</span></span>
+                <span class="lang-ko">AI 미취학 아동 <span class="text-cyan-400">심리 분석 플랫폼</span></span>
+            </h1>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto font-light">
+                <span class="lang-zh">结合多模态数据与社会化机器人，实现高效、低成本的早期心理评估研究。</span>
+                <span class="lang-en">Combining multimodal data and social robots for efficient, low-cost early psychological assessment research.</span>
+                <span class="lang-ko">다중 모달 데이터와 소셜 로봇을 결합하여 효율적이고 저비용의 조기 심리 평가 연구를 실현합니다.</span>
+            </p>
+        </div>
+    </header>
 
-<section id="hero">
-<h2>Future-Tech Research Platform</h2>
-<p>Physical AI • ESS Control • Renewable Smart Grid</p>
-</section>
+    <section class="container mx-auto px-6 py-10 relative z-10">
+        <div class="glass p-8 rounded-2xl bg-black/40 text-center">
+            <h2 class="text-2xl font-bold mb-6 text-cyan-400">
+                <span class="lang-zh">📚 全局学术引擎一键检索</span>
+                <span class="lang-en font-en">GLOBAL ACADEMIC SEARCH HUB</span>
+                <span class="lang-ko">글로벌 학술 엔진 통합 검색</span>
+            </h2>
+            
+            <div class="max-w-2xl mx-auto mb-8 relative">
+                <input type="text" id="global-search-query" 
+                    class="w-full bg-zinc-900 border border-zinc-700 text-white px-6 py-4 rounded-xl search-input transition"
+                    placeholder="例如: AI 教育用 机器人 / AI Child Psychology Robot"
+                    value="AI 교육용 로봇">
+            </div>
 
-<section id="research">
-<h2>Research Areas</h2>
-<ul>
-<li>Physical AI Systems</li>
-<li>Energy Storage System Control</li>
-<li>Renewable Grid Optimization</li>
-</ul>
-</section>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="triggerSearch('ieee')" class="px-6 py-3 border border-blue-600 bg-blue-900/20 text-blue-300 rounded-lg hover:bg-blue-600 hover:text-white transition font-en tracking-wider flex items-center gap-2">
+                    IEEE Xplore
+                </button>
+                <button onclick="triggerSearch('dbpia')" class="px-6 py-3 border border-red-600 bg-red-900/20 text-red-300 rounded-lg hover:bg-red-600 hover:text-white transition font-en tracking-wider flex items-center gap-2">
+                    DBpia (IEEK/Korean)
+                </button>
+                <button onclick="triggerSearch('riss')" class="px-6 py-3 border border-orange-600 bg-orange-900/20 text-orange-300 rounded-lg hover:bg-orange-600 hover:text-white transition font-en tracking-wider flex items-center gap-2">
+                    RISS (Korea)
+                </button>
+                <button onclick="triggerSearch('scholar')" class="px-6 py-3 border border-green-600 bg-green-900/20 text-green-300 rounded-lg hover:bg-green-600 hover:text-white transition font-en tracking-wider flex items-center gap-2">
+                    Google Scholar
+                </button>
+                <button onclick="triggerSearch('acm')" class="px-6 py-3 border border-purple-600 bg-purple-900/20 text-purple-300 rounded-lg hover:bg-purple-600 hover:text-white transition font-en tracking-wider flex items-center gap-2">
+                    ACM Digital Library
+                </button>
+                <button onclick="triggerSearch('sciencedirect')" class="px-6 py-3 border border-teal-600 bg-teal-900/20 text-teal-300 rounded-lg hover:bg-teal-600 hover:text-white transition font-en tracking-wider flex items-center gap-2">
+                    ScienceDirect
+                </button>
+            </div>
+            <p class="mt-4 text-xs text-gray-500">
+                <span class="lang-zh">* 输入关键词后，点击上述按钮即可直达对应数据库的检索结果页面。默认检索词为“AI 教育用 机器人”。</span>
+                <span class="lang-en">* Enter keywords and click the buttons above to directly access the search results. Default query is "AI Educational Robot".</span>
+                <span class="lang-ko">* 키워드를 입력하고 위 버튼을 클릭하면 해당 데이터베이스의 검색 결과 페이지로 바로 이동합니다. 기본 검색어는 "AI 교육용 로봇"입니다.</span>
+            </p>
+        </div>
+    </section>
 
-<section>
-<h2>Paper Search</h2>
-<input id="searchbox" placeholder="Search Physical AI papers">
-<button onclick="searchIEEE()">IEEE</button>
-<button onclick="searchScienceDirect()">ScienceDirect</button>
-</section>
+    <section class="container mx-auto px-6 py-12 relative z-10">
+        <h2 class="text-3xl font-en mb-12 border-l-4 border-cyan-500 pl-4">
+            <span class="lang-zh">核心学术文献 (2019-2025)</span>
+            <span class="lang-en">Core Academic Publications</span>
+            <span class="lang-ko">핵심 학술 문헌 (2019-2025)</span>
+        </h2>
+        
+        <div class="space-y-8">
+            <div class="glass p-8 rounded-2xl">
+                <h3 class="text-xl font-bold text-cyan-400 mb-2 font-en">A is for Artificial Intelligence: The Impact of Artificial Intelligence Activities on Young Children's Perceptions of Robots</h3>
+                <p class="text-sm text-gray-500 mb-4 italic">Williams, R., Park, H. W., & Breazeal, C. (2019). CHI Conference.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-cyan-900/50 text-cyan-300 text-xs rounded border border-cyan-700">AI Education</span>
+                    <span class="px-2 py-1 bg-cyan-900/50 text-cyan-300 text-xs rounded border border-cyan-700">Child-Robot Interaction</span>
+                </div>
+                <div class="paper-content text-sm text-gray-300 space-y-4">
+                    <div>
+                        <strong class="text-white">ABSTRACT / 摘要:</strong><br>
+                        <span class="lang-zh">我们开发了一个名为PopBots的新型早期儿童人工智能平台，学龄前儿童通过训练社会化机器人并与之互动来学习AI概念。研究评估了累积中位数得分为70%，年轻儿童倾向于将机器人视为比自己聪明的玩具。</span>
+                        <span class="lang-en">We developed a novel early childhood AI platform, PopBots, where preschool children train and interact with social robots to learn AI concepts. The median score on the cumulative assessment was 70%. Younger children came to see robots as toys that were smarter than them.</span>
+                        <span class="lang-ko">우리는 미취학 아동이 소셜 로봇과 상호작용하며 AI 개념을 배우는 PopBots 플랫폼을 개발했습니다. 평가의 누적 중앙값은 70%였습니다. 어린 아이들은 로봇을 자신보다 똑똑한 장난감으로 보는 경향이 있었습니다.</span>
+                    </div>
+                    <div>
+                        <strong class="text-white">INTRODUCTION / 引言:</strong><br>
+                        <span class="lang-zh">人工智能将对社会产生巨大影响。今天的交互设备远远比十年前先进，表现得更像具有社会交互能力的存在。这些为儿童成为AI原住民奠定了基础。</span>
+                        <span class="lang-en">AI will have a huge impact on our society. Today's interactive devices behave more like socially interactive beings. All of this sets the stage for a future where children grow up as AI natives.</span>
+                        <span class="lang-ko">인공지능은 우리 사회에 큰 영향을 미칠 것입니다. 오늘날의 기기들은 사회적으로 상호작용하는 존재처럼 행동합니다. 이는 아이들이 AI 원주민으로 성장하는 미래의 기반을 마련합니다.</span>
+                    </div>
+                </div>
+            </div>
 
-<section id="contact">
-<h2>Contact</h2>
-<p>Email: research@physicalai-lab.org</p>
-<p>GitHub Lab Repository</p>
-</section>
+            <div class="glass p-8 rounded-2xl">
+                <h3 class="text-xl font-bold text-cyan-400 mb-2 font-en">Supporting Preschool Emotional Development with AI-Powered Robots</h3>
+                <p class="text-sm text-gray-500 mb-4 italic">Berrezueta-Guzman, S., et al. (2025). ACM IDC.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-purple-900/50 text-purple-300 text-xs rounded border border-purple-700">Emotional Self-regulation</span>
+                    <span class="px-2 py-1 bg-purple-900/50 text-purple-300 text-xs rounded border border-purple-700">Preschool Education</span>
+                </div>
+                <div class="paper-content text-sm text-gray-300 space-y-4">
+                    <div>
+                        <strong class="text-white">ABSTRACT / 摘要:</strong><br>
+                        <span class="lang-zh">本研究评估了AI驱动的机器人在幼儿教育中的应用，重点关注其对情绪自我调节的影响。为期十周的实验表明，早期接触机器人显著提高了情绪识别能力，持续互动进一步改善了协作解决问题的能力。</span>
+                        <span class="lang-en">This study evaluates AI-powered robots in early childhood education, focusing on emotional self-regulation. A 10-week experimental design showed that early exposure significantly enhanced emotional recognition.</span>
+                        <span class="lang-ko">본 연구는 유아 교육에서 AI 기반 로봇의 적용을 평가하며, 정서적 자기 조절에 중점을 둡니다. 10주간의 실험 결과, 로봇에 조기 노출된 아이들은 정서 인식 능력이 크게 향상되었습니다.</span>
+                    </div>
+                    <div>
+                        <strong class="text-white">INTRODUCTION / 引言:</strong><br>
+                        <span class="lang-zh">技术在教育中的整合重塑了传统学习环境。机器人和AI工具在早期教育中成为变革性元素。对于学龄前儿童而言，情绪自我调节是学业和社交成功的关键基础。</span>
+                        <span class="lang-en">Technology integration has reshaped learning environments. Robotics and AI-powered tools have emerged as transformative elements. Emotional self-regulation is a critical developmental milestone.</span>
+                        <span class="lang-ko">교육에서의 기술 통합은 학습 환경을 재편했습니다. 로봇공학과 AI 도구는 특히 유아 교육에서 혁신적인 요소로 떠올랐습니다. 정서적 자기 조절은 중요한 발달 이정표입니다.</span>
+                    </div>
+                </div>
+            </div>
 
-<footer>
-<p>© Physical AI Energy Systems Lab</p>
-</footer>
+            <div class="glass p-8 rounded-2xl">
+                <h3 class="text-xl font-bold text-cyan-400 mb-2 font-en">Advancing Emotionally Aware Child-Robot Interaction with Biophysical Data</h3>
+                <p class="text-sm text-gray-500 mb-4 italic">Faria, D. R., Godkin, A. L., & da Silva Ayrosa, P. P. (2025). Sensors.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-1 bg-green-900/50 text-green-300 text-xs rounded border border-green-700">Affective Computing</span>
+                    <span class="px-2 py-1 bg-green-900/50 text-green-300 text-xs rounded border border-green-700">Biophysical Data</span>
+                </div>
+                <div class="paper-content text-sm text-gray-300 space-y-4">
+                    <div>
+                        <strong class="text-white">ABSTRACT / 摘要:</strong><br>
+                        <span class="lang-zh">本文研究了使用生物物理数据集成情感计算技术。通过结合面部表情和语音情感识别，NAO机器人能够在实时交互中发现并解决儿童的负面情绪。模型对面部表情达到了85%的实时分类准确率。</span>
+                        <span class="lang-en">This paper investigates integrating affective computing with biophysical data. Utilizing the NAO robot, facial expression and speech emotion recognition were employed to detect negative emotions in real time. The system achieved 85% accuracy.</span>
+                        <span class="lang-ko">본 논문은 생물리학적 데이터를 활용한 감성 컴퓨팅 기술의 통합을 연구합니다. NAO 로봇을 통해 실시간으로 부정적인 감정을 감지하고 해결합니다. 모델은 실시간 분류 정확도 85%를 달성했습니다.</span>
+                    </div>
+                    <div>
+                        <strong class="text-white">INTRODUCTION / 引言:</strong><br>
+                        <span class="lang-zh">情感计算利用神经科学、心理学和AI的跨学科见解，创造出能够实时识别和回应人类情感的系统，这正彻底改变人机交互的方式，打造个性化支持体验。</span>
+                        <span class="lang-en">Affective computing leverages neuroscience, psychology, and AI to create systems that interpret and respond to human emotions in real time, transforming human-technology interaction.</span>
+                        <span class="lang-ko">감성 컴퓨팅은 실시간으로 인간의 감정을 인식하고 반응하는 시스템을 만들어 인간-기술 상호작용을 혁신하고 있습니다.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <footer class="py-12 border-t border-white/10 text-center text-gray-600">
+        <p class="font-en text-xs tracking-widest">© 2026 DIGITAL CONVERGENCE LAB | Kunsan National University</p>
+    </footer>
+
+    <script>
+        // 语言切换逻辑
+        function setLang(lang) {
+            document.querySelectorAll('.lang-zh, .lang-en, .lang-ko').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('.lang-' + lang).forEach(el => {
+                if(el.tagName.toLowerCase() === 'span') {
+                    el.style.display = 'inline';
+                } else {
+                    el.style.display = 'block';
+                }
+            });
+            const body = document.getElementById('body-font');
+            body.className = body.className.replace(/font-(zh|en|ko)/, 'font-' + lang);
+        }
+        setLang('zh'); // 默认中文
+
+        // 一键检索跳转逻辑
+        function triggerSearch(engine) {
+            const queryInput = document.getElementById('global-search-query').value.trim();
+            const query = queryInput ? queryInput : 'AI 교육용 로봇'; // 默认查询韩国的“AI教育机器人”
+            const encodedQuery = encodeURIComponent(query);
+            let url = '';
+
+            switch(engine) {
+                case 'ieee': 
+                    url = 'https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=' + encodedQuery; 
+                    break;
+                case 'dbpia': 
+                    // DBpia 聚合了包含 IEEK 在内的大量韩国本土期刊数据
+                    url = 'https://www.dbpia.co.kr/search/topSearch?searchOption=all&query=' + encodedQuery; 
+                    break;
+                case 'riss': 
+                    url = 'https://www.riss.kr/search/Search.do?detailSearch=false&searchGubun=true&strQuery=' + encodedQuery; 
+                    break;
+                case 'scholar': 
+                    url = 'https://scholar.google.com/scholar?q=' + encodedQuery; 
+                    break;
+                case 'acm': 
+                    url = 'https://dl.acm.org/action/doSearch?AllField=' + encodedQuery; 
+                    break;
+                case 'sciencedirect': 
+                    url = 'https://www.sciencedirect.com/search?qs=' + encodedQuery; 
+                    break;
+            }
+            // 在新标签页打开检索结果
+            window.open(url, '_blank');
+        }
+    </script>
 </body>
 </html>
