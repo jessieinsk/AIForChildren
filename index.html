@@ -21,6 +21,12 @@
         .paper-content::-webkit-scrollbar { width: 4px; }
         .paper-content::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
         .search-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 15px rgba(0, 242, 255, 0.3); }
+        .btn-glow { animation: glowing 2s infinite; }
+        @keyframes glowing {
+            0% { box-shadow: 0 0 5px rgba(168, 85, 247, 0.2); }
+            50% { box-shadow: 0 0 15px rgba(168, 85, 247, 0.6); }
+            100% { box-shadow: 0 0 5px rgba(168, 85, 247, 0.2); }
+        }
     </style>
 </head>
 <body class="font-zh" id="body-font">
@@ -28,7 +34,18 @@
     <div class="fixed inset-0 pointer-events-none hero-gradient"></div>
 
     <nav class="fixed w-full z-50 glass py-4 px-8 flex justify-between items-center">
-        <div class="font-en font-bold text-xl tracking-widest text-white">DIGITAL CONVERGENCE LAB</div>
+        <div class="flex items-center gap-6">
+            <div class="font-en font-bold text-xl tracking-widest text-white hidden md:block">DIGITAL CONVERGENCE LAB</div>
+            <div class="font-en font-bold text-xl tracking-widest text-white md:hidden">DCL</div>
+            
+            <a href="https://jessieinsk.github.io/Prompt/" target="_blank" class="px-4 py-1.5 rounded-full text-xs font-bold bg-purple-900/40 border border-purple-500/50 text-purple-300 hover:bg-purple-600 hover:text-white transition flex items-center gap-1.5 btn-glow">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <span class="lang-zh">提示词工程演示</span>
+                <span class="lang-en font-en tracking-wider">Prompt Showcase</span>
+                <span class="lang-ko">프롬프트 쇼케이스</span>
+            </a>
+        </div>
+
         <div class="flex space-x-2 bg-black/50 p-1 rounded-lg border border-white/10">
             <button onclick="setLang('zh')" class="px-3 py-1 rounded text-sm text-cyan-400 font-bold hover:bg-white/10 transition">中文</button>
             <button onclick="setLang('en')" class="px-3 py-1 rounded text-sm text-gray-400 hover:text-cyan-400 hover:bg-white/10 transition">EN</button>
@@ -38,7 +55,7 @@
 
     <header class="relative pt-32 pb-16 flex flex-col justify-center items-center text-center px-4">
         <div class="z-10 animate__animated animate__zoomIn">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white mt-10">
                 <span class="lang-zh">AI 学龄前儿童<span class="text-cyan-400">心理分析平台</span></span>
                 <span class="lang-en font-en">AI Preschooler <span class="text-cyan-400">Psychology Platform</span></span>
                 <span class="lang-ko">AI 미취학 아동 <span class="text-cyan-400">심리 분석 플랫폼</span></span>
@@ -148,25 +165,21 @@
                 <span class="tech-font text-gray-300 font-bold text-sm mb-1">MIT Media Lab</span>
                 <span class="text-xs text-gray-500">Personal Robots</span>
             </a>
-            
             <a href="https://www.ubtrobot.com/en/consumer/humanoid-robots/alpha-series/alpha-mini" target="_blank" class="glass p-6 rounded-2xl flex flex-col items-center justify-center hover:bg-white/5 transition group text-center cursor-pointer border-cyan-900/30">
                 <div class="w-14 h-14 bg-cyan-900/40 text-cyan-400 rounded-full mb-4 flex items-center justify-center text-2xl group-hover:scale-110 transition shadow-lg shadow-cyan-900/50">🤖</div>
                 <span class="tech-font text-cyan-400 font-bold text-sm mb-1">Alpha Mini</span>
                 <span class="text-xs text-gray-500">UBTECH</span>
             </a>
-
             <a href="https://keyirobot.com/products/loona" target="_blank" class="glass p-6 rounded-2xl flex flex-col items-center justify-center hover:bg-white/5 transition group text-center cursor-pointer border-purple-900/30">
                 <div class="w-14 h-14 bg-purple-900/40 text-purple-400 rounded-full mb-4 flex items-center justify-center text-2xl group-hover:scale-110 transition shadow-lg shadow-purple-900/50">🐶</div>
                 <span class="tech-font text-purple-400 font-bold text-sm mb-1">Loona</span>
                 <span class="text-xs text-gray-500">KEYi Tech</span>
             </a>
-
             <a href="https://living.ai/emo/" target="_blank" class="glass p-6 rounded-2xl flex flex-col items-center justify-center hover:bg-white/5 transition group text-center cursor-pointer border-blue-900/30">
                 <div class="w-14 h-14 bg-blue-900/40 text-blue-400 rounded-full mb-4 flex items-center justify-center text-2xl group-hover:scale-110 transition shadow-lg shadow-blue-900/50">🎧</div>
                 <span class="tech-font text-blue-400 font-bold text-sm mb-1">EMO</span>
                 <span class="text-xs text-gray-500">Living.ai</span>
             </a>
-
             <a href="https://www.mi.com/cyberdog2" target="_blank" class="glass p-6 rounded-2xl flex flex-col items-center justify-center hover:bg-white/5 transition group text-center cursor-pointer border-orange-900/30">
                 <div class="w-14 h-14 bg-orange-900/40 text-orange-400 rounded-full mb-4 flex items-center justify-center text-2xl group-hover:scale-110 transition shadow-lg shadow-orange-900/50">🐕</div>
                 <span class="tech-font text-orange-400 font-bold text-sm mb-1">CyberDog 2</span>
@@ -190,11 +203,11 @@
                 
                 <div class="grid grid-cols-2 gap-4">
                     <div class="bg-black/50 rounded-lg overflow-hidden border border-white/5">
-                        <img src="https://keyirobot.com/cdn/shop/files/loona_1.jpg" alt="Loona Robot" class="w-full h-32 object-cover opacity-80 hover:opacity-100 transition">
+                        <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=80&w=800" alt="Loona Robot Concept" class="w-full h-32 object-cover opacity-80 hover:opacity-100 transition">
                         <p class="text-xs text-center py-2 text-gray-400">Loona - 情感陪伴交互</p>
                     </div>
                     <div class="bg-black/50 rounded-lg overflow-hidden border border-white/5">
-                        <img src="https://www.ubtrobot.com/pub/media/wysiwyg/alpha-mini/mini_1.jpg" alt="Alpha Mini" class="w-full h-32 object-cover opacity-80 hover:opacity-100 transition">
+                        <img src="https://images.unsplash.com/photo-1546776310-eef45dd6d63c?auto=format&fit=crop&q=80&w=800" alt="Alpha Mini Concept" class="w-full h-32 object-cover opacity-80 hover:opacity-100 transition">
                         <p class="text-xs text-center py-2 text-gray-400">Alpha Mini - 动作与肢体反馈</p>
                     </div>
                 </div>
